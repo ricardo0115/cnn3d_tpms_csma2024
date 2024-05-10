@@ -1,0 +1,138 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cnn_tpms"
+authors = [
+    {name = "Manuel Ricardo GUEVARA GARBAN", email = 'manuel.guevara-garban@u-bordeaux.fr'},
+    ]
+description = "Classification and mechanical features prediction using 3DCNN for CSMA 2024"
+readme = "README.md"
+requires-python = ">=3.8"
+keywords = ["microstructure", "lattice", "ai", "physics", "pytorch"]
+license = {text = "GPLv3"}
+classifiers = [
+    'Intended Audience :: Science/Research',
+    'Topic :: Scientific/Engineering :: Information Analysis',
+    'Operating System :: Microsoft :: Windows',
+    'Operating System :: POSIX',
+    'Operating System :: MacOS',
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    ]
+dependencies = [
+    "numpy",
+    "pyvista>=0.43",
+    "torch",
+    "torchvision",
+    "einops",
+    "pandas",
+    "tqdm",
+    "trimesh",
+    "fire",
+    "scikit-learn",
+    "seaborn",
+    "tensorboard",
+    ]
+dynamic = ["version"]
+
+[project.optional-dependencies]
+test = [
+    'pytest',
+    'pytest-cov',
+    'pytest',
+    'pytest-mypy',
+    'pytest-pylint',
+    'pytest-cov',
+    'pytest-watch',
+    'pylint',
+    'black',
+    'mypy',
+    'hypothesis',
+    'h5py',
+    ]
+
+dev = [
+    'pynvim',
+    'jedi',
+    'jupyterlab',
+    'tensorboard',
+    'torchsummary',
+    'ipywidgets',
+    'trame',
+    'trame-vtk',
+    'trame-vuetify',
+    'trame-plotly',
+    'ipython',
+    'mypy',
+    'torchinfo',
+    'meshio',
+    'scipy',
+    'imageio[ffmpeg]',
+    'fire',
+    'scikit-learn',
+    'scikit-image',
+    'seaborn',
+    'pypardiso',
+    'microgen@git+https://github.com/3MAH/microgen#egg=master',
+    'fedoo',
+    ]
+
+all = ["cnn_tpms[test, dev]"]
+
+[project.urls]
+"Bug Tracker" = 'https://github.com/ricardo0115/cnn_tpms/issues'
+"Source Code" = 'https://github.com/ricardo0115/cnn_tpms'
+
+[tool.setuptools.dynamic]
+version = {attr = 'cnn_tpms._version.__version__'}
+
+[tool.setuptools.packages.find]
+include = [
+    'cnn_tpms',
+    'cnn_tpms.*',
+    ]
+
+[tool.setuptools.package-data]
+"cnn_tpms.data" = [
+    'thickness_densities.json',
+    ]
+
+[tool.mypy]
+follow_imports = 'silent'
+disallow_incomplete_defs = true
+disallow_untyped_defs = true
+disallow_any_explicit = true
+check_untyped_defs = true
+plugins = "numpy.typing.mypy_plugin"
+namespace_packages = true
+explicit_package_bases = true
+
+[tool.pytest.ini_options]
+testpaths = "test"
+
+[[tool.mypy.overrides]]
+module = [
+    "networkx",
+    "torchvision.io",
+    "hypothesis",
+    "hypothesis.strategies",
+    "geosat.cloud",
+    "sklearn.cluster",
+    "sklearn.base",
+    "scipy.spatial",
+    "scipy.spatial._qhull",
+    "scipy",
+    "matplotlib",
+    "matplotlib.pyplot",
+    "shapely.geometry",
+    "laspy",
+    "torch",
+    "torch_geometry",
+    ]
+ignore_missing_imports = true
+
+[tool.black]
+line-length = 80
