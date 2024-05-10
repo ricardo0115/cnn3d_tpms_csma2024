@@ -6,7 +6,7 @@ Guevara garban [et al.] (sciencesconf.org:csma2024:501154)" presented at CSMA
 
 ## Installation
 
-Is strongly recommended to install this project in a new conda environnement
+Is strongly recommended to install this project using a new conda environnement
 
 ```
 conda create -n cnn_3d python=3.11
@@ -28,13 +28,13 @@ To generate the learning database you shoud go to `scripts` folder and execute
 python3 generate_dataset --mesh_resolution 100 --n_samples_per_class 1000 --dataset_folder dataset_mesh/
 ```
 
-To train the CNN3D, in the same folder named `scripts` execute
-
+To train the CNN3D (NVIDIA GPU is required), in the same folder named `scripts`
+execute
 ```
 python3 train.py --epochs 50 --voxel_resolution 50 --dataset_folder dataset_mesh/
 ```
 
-Results (learning curves, confusion matrix) will be stored in a folder called
+Results, learning curves and confusion matrix will be stored in a folder called
 `train_cnn`, this results can be visualized using tensorboard.
 
 ```
