@@ -31,7 +31,7 @@ python3 generate_dataset --mesh_resolution 100 --n_samples_per_class 1000 --data
 To train the CNN3D (NVIDIA GPU is required), in the same folder named `scripts`
 execute
 ```
-python3 train.py --epochs 50 --voxel_resolution 50 --dataset_folder dataset_mesh/
+python3 train.py --epochs 50 --voxel_resolution 80 --dataset_folder dataset_mesh/
 ```
 
 Results, learning curves and confusion matrix will be stored in a folder called
