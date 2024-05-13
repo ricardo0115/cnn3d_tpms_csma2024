@@ -4,6 +4,10 @@ triplement périodiques avec des réseaux de neurones à convolution 3D, M.
 Guevara garban [et al.] (sciencesconf.org:csma2024:501154)" presented at CSMA
 2024 (16ème Colloque National en Calcul de Structures).
 
+<img src="docs/cnn3d.png" width="800">
+<img src="docs/all_tpms.png" width="800">
+
+
 ## Installation
 
 Is strongly recommended to install this project using a new conda environnement
