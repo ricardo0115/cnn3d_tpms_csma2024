@@ -4,6 +4,8 @@ triplement périodiques avec des réseaux de neurones à convolution 3D, M.
 Guevara Garban, Y. Chemisky, E. Prulière, M. Clément [sciencesconf.org:csma2024:501154](https://csma2024.sciencesconf.org/501154)" presented at CSMA
 2024 (16ème Colloque National en Calcul de Structures).
 
+Link to article (in French) [here](https://csma2024.sciencesconf.org/501154)
+
 <img src="docs/cnn3d.png" width="800">
 <img src="docs/all_tpms.png" width="800">
 
